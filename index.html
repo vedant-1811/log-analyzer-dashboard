@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LogInsight Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>⚡ LogInsight</h2>
+    <ul>
+      <li>Dashboard</li>
+      <li>Logs</li>
+      <li>Analytics</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <h1>📊 Dashboard</h1>
+
+    <!-- UPLOAD -->
+    <div id="dropZone">📂 Drag & Drop Log File</div>
+    <input type="file" id="fileInput" hidden>
+
+    <!-- CARDS -->
+    <div class="cards">
+      <div class="card error">Errors <span id="errorCount">0</span></div>
+      <div class="card warning">Warnings <span id="warningCount">0</span></div>
+      <div class="card info">Info <span id="infoCount">0</span></div>
+    </div>
+
+    <!-- HEALTH -->
+    <h2>System Health: <span id="health">Good</span></h2>
+
+    <!-- CHART -->
+    <div class="chart-container">
+  <canvas id="chart"></canvas>
+</div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search logs...">
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="error">Errors</option>
+        <option value="warning">Warnings</option>
+        <option value="info">Info</option>
+      </select>
+    </div>
+
+    <!-- LOGS -->
+    <div class="logs" id="logOutput"></div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
